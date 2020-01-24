@@ -1,7 +1,7 @@
 	var canvas;
 	var c;
 	var pi = Math.PI;
-	var money = 50;
+	var money = 100;
 	
     function initialize() {
         canvas = document.getElementById( "canvas" );
