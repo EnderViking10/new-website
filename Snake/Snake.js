@@ -145,6 +145,7 @@ function reset(){
 	foodY = 20*parseInt(Math.random()*30);
 	dx = 0;
 	dy = 0;
+	score = 0;
 }
 
 function looser(){
