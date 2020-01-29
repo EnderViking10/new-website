@@ -159,15 +159,10 @@ function checkCookiess(){
 		ncookie[i] = getCookie("num" + i);
 		if(ncookie[i] != undefined)
 			num[i] = ncookie[i];
-		else
-			setCookie("num" + i, num[i], 365);
 		
 	  // Inc cookies
 		icookie[i] = getCookie("inc" + i);
 		if(icookie[i] != undefined)
 			inc[i] = icookie[i];
-		else
-			setCookie("inc" + i, inc[i], 365);
-		
 	}	
 }
