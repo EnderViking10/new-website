@@ -69,51 +69,53 @@ bar = []
 checkCookiess();
 
 function run(){
-for(let i=0; i<10; i++){
-	bar[i] = document.getElementById("bar" + (i+1));
+	setCookie("ncookie" + i, num[i], 365);
+	setCookie("inc" + i, inc[i], 365);
+	for(let i=0; i<10; i++){
+		bar[i] = document.getElementById("bar" + (i+1));
 
-	progress[i] += inc[i];
+		progress[i] += inc[i];
 
-	if(progress[i] > 100){
-		progress[i] = 0;
-		switch(i){
-			case 0:
-				money += 5;
-				break;
-			case 1:
-				money += 10;
-				break;
-			case 2:
-				money += 20;
-				break;
-			case 3:
-				money += 40;
-				break;
-			case 4:
-				money += 80;
-				break;
-			case 5:
-				money += 160;
-				break;
-			case 6:
-				money += 320;
-				break;
-			case 7:
-				money += 640;
-				break;
-			case 8:
-				money += 1280;
-				break;
-			case 9:
-				money += 2560;
-				break;
+		if(progress[i] > 100){
+			progress[i] = 0;
+			switch(i){
+				case 0:
+					money += 5;
+					break;
+				case 1:
+					money += 10;
+					break;
+				case 2:
+					money += 20;
+					break;
+				case 3:
+					money += 40;
+					break;
+				case 4:
+					money += 80;
+					break;
+				case 5:
+					money += 160;
+					break;
+				case 6:
+					money += 320;
+					break;
+				case 7:
+					money += 640;
+					break;
+				case 8:
+					money += 1280;
+					break;
+				case 9:
+					money += 2560;
+					break;
+			}
 		}
-	}
 	if(num[i] < 100)
 		bar[i].style.width = progress[i] + "%";
 	else
 		bar[i].style.width = "100%";
-}
+	}
 }
 
 function setCookie(cname, cvalue, exdays) {
@@ -156,7 +158,7 @@ function checkCookiess(){
 		if(ncookie[i] != undefined)
 			num[i] = ncookie[i];
 		else
-			setCookie("ncookie" + i, num[i], 365);
+			setCookie("num" + i, num[i], 365);
 		
 	  // Inc cookies
 		icookie[i] = getCookie("inc" + i);
