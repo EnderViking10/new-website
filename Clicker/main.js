@@ -155,7 +155,7 @@ function checkCookie() {
 			setCookie("ncookie" + i, num[i], 365);
 		
 	  // Inc cookies
-		icookie[i] = getCookie(inc" + i);
+		icookie[i] = getCookie("inc" + i);
 		if(icookie[i] != undefined)
 			inc[i] = icookie[i];
 		else
