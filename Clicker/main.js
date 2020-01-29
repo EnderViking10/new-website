@@ -71,7 +71,7 @@ checkCookiess();
 function run(){
 	for(let i=0; i<10; i++){
 		
-		setCookie("ncookie" + i, num[i], 365);
+		setCookie("num" + i, num[i], 365);
 		setCookie("inc" + i, inc[i], 365);
 		
 		bar[i] = document.getElementById("bar" + (i+1));
