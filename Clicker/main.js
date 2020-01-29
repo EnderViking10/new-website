@@ -12,7 +12,7 @@
 			var midy = canvas.height/2;
 			var cw = canvas.width;
 			var ch = canvas.height;
-			
+
 			//drawScreen();   // call the function to draw once
 			window.setInterval("drawScreen()",1000/30);  // call repeatedly
 			
@@ -22,6 +22,7 @@
 	  	  
 	function drawScreen() {
 		
+		checkCookie();
 	  // Background
 	  
 		c.beginPath();
@@ -106,5 +107,40 @@ function run(){
 		}
 		if(num[i] < 100)
 			bar[i].style.width = progress[i] + "%";
+		else
+			bar[i].style.width = "100%";
+	}
+}
+
+function setCookie(cname, cvalue, exdays) {
+	var d = new Date();
+	d.setTime(d.getTime() + (exdays*24*60*60*1000));
+	var expires = "expires="+ d.toUTCString();
+	document.cookie = cname + "=" + cvalue + ";" + expires + ";SameSite=none;Secure;path=/";
+}
+
+function getCookie(cname) {
+ 	var name = cname + "=";
+ 	var decodedCookie = decodeURIComponent(document.cookie);
+ 	var ca = decodedCookie.split(';');
+	for(var i = 0; i <ca.length; i++) {
+    	var c = ca[i];
+	    while (c.charAt(0) == ' ') {
+	      c = c.substring(1);
+	   	}
+		if (c.indexOf(name) == 0) 
+	  		return c.substring(name.length, c.length);
+  	}
+}
+
+function checkCookie() {
+  	cooky= getCookie("money");
+	if (cooky != undefined) {
+		money = cooky;
+		console.log(cooky);
+	}
+	else{
+		setCookie("money", money, 365);
+		console.log(getCookie("money"));
 	}
 }
