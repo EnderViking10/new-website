@@ -23,37 +23,41 @@ function initialize() {
 			switch(key.keyCode){
 				case 87: // w
 					dx = 0;
-					if(dy < 20)
+					if(dy != 20)
 					dy = -20;
 					break;
 				case 83: // s
 					dx = 0;
-					if(dy > -20)
+					if(dy != -20)
 					dy = 20;
 					break;
 				case 65: // a
-					if(dx < 20)
+					if(dx != 20)
 					dx = -20;
 					dy = 0;
 					break;
 				case 68: // d
-					if(dx > -20)
+					if(dx != -20)
 					dx = 20;
 					dy = 0;
 					break;
 				case 38: // ua
 					dx = 0;
+					if(dy != 20)
 					dy = -20;
 					break;
 				case 40: // da
 					dx = 0;
+					if(dy != -20)
 					dy = 20;
 					break;
 				case 37: // la
+					if(dx != 20)
 					dx = -20;
 					dy = 0;
 					break;
 				case 	39: // ra
+					if(dx != -20)
 					dx = 20;
 					dy = 0;
 					break;
