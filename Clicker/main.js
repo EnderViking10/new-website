@@ -69,9 +69,11 @@ bar = []
 checkCookiess();
 
 function run(){
-	setCookie("ncookie" + i, num[i], 365);
-	setCookie("inc" + i, inc[i], 365);
 	for(let i=0; i<10; i++){
+		
+		setCookie("ncookie" + i, num[i], 365);
+		setCookie("inc" + i, inc[i], 365);
+		
 		bar[i] = document.getElementById("bar" + (i+1));
 
 		progress[i] += inc[i];
