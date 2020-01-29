@@ -135,10 +135,31 @@ function getCookie(cname) {
 	}
 }
 
+var ncookie = [],
+icookie = [];
+
 function checkCookie() {
-	cooky= getCookie("money");
-	if (cooky != undefined) 
-		money = cooky;
+  // Money cookies
+	var mcookie = getCookie("money");
+	if (mcookie != undefined)
+		money = mcookie;
 	else
 		setCookie("money", money, 365);
+	
+	for(let i=0; i<9; i++){
+	  // Num cookies
+		ncookie[i] = getCookie("num" + i);
+		if(ncookie[i] != undefined)
+			num[i] = ncookie[i];
+		else
+			setCookie("ncookie" + i, num[i], 365);
+		
+	  // Inc cookies
+		icookie[i] = getCookie(inc" + i);
+		if(icookie[i] != undefined)
+			inc[i] = icookie[i];
+		else
+			setCookie("inc" + i, inc[i], 365);
+		
+	}
 }
