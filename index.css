@@ -1,10 +1,7 @@
-.body{
-	padding: none;
+.body {
 	margin: none;
+	padding: none;
 	border: none;
-}
-
-#intro {
 	background: url("background.jpg")no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
