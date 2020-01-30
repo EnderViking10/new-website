@@ -1,6 +1,4 @@
-var canvas;
-var c;
-var pi = Math.PI;
+var canvas, c;
 var money = 100;
 checkCookie();
 
