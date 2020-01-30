@@ -141,8 +141,7 @@ function getCookie(cname) {
 
 function checkCookie() {
   // Money cookies
-	console.log("x");
-	var mcookie = getCookie("money");
+	var mcookie = parseInt(getCookie("money"));
 	if (mcookie != undefined)
 		money = mcookie;
 	else
@@ -154,11 +153,10 @@ function checkCookie() {
 function checkCookiess(){
 	for(let i=0; i<9; i++){
 	  // Num cookies
-		console.log("x");
 		var ncookie = [],
 		icookie = [];
 		
-		ncookie[i] = getCookie("num" + i);
+		ncookie[i] = parseInt(getCookie("num" + i));
 		if(ncookie[i] != undefined)
 			num[i] = ncookie[i];
 		else
@@ -167,7 +165,7 @@ function checkCookiess(){
 	  // Inc cookies
 		icookie[i] = getCookie("inc" + i);
 		if(icookie[i] != undefined)
-			inc[i] = icookie[i];
+			inc[i] = parseInt(icookie[i]);
 		else
 			setCookie("inc" + i, inc[i],365);
 	}	
