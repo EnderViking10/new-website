@@ -130,17 +130,14 @@ function getCookie(cname) {
 	var decodedCookie = decodeURIComponent(document.cookie);
 	var ca = decodedCookie.split(';');
 	for(var i = 0; i <ca.length; i++) {
-	var c = ca[i];
-		while (c.charAt(0) == ' ') {
-		  c = c.substring(1);
+	var car = ca[i];
+		while (car.charAt(0) == ' ') {
+		  car = car.substring(1);
 		}
-		if (c.indexOf(name) == 0) 
-			return c.substring(name.length, c.length);
+		if (car.indexOf(name) == 0) 
+			return car.substring(name.length, car.length);
 	}
 }
-
-var ncookie = [],
-icookie = [];
 
 function checkCookie() {
   // Money cookies
@@ -150,6 +147,9 @@ function checkCookie() {
 	else
 		setCookie("money", money, 365);
 }
+
+var ncookie = [],
+icookie = [];
 
 function checkCookiess(){
 	for(let i=0; i<9; i++){
