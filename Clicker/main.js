@@ -147,8 +147,7 @@ function checkCookie() {
 		setCookie("money", money, 365);
 }
 
-var ncookie = [],
-icookie = [];
+var ncookie = [];
 
 function checkCookiess(){
 	for(let i=0; i<9; i++){
