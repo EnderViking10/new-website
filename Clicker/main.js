@@ -153,6 +153,7 @@ function checkCookie() {
 function checkCookiess(){
 	for(let i=0; i<9; i++){
 	  // Num cookies
+		console.log("x");
 		var ncookie = [],
 		icookie = [];
 		
