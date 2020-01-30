@@ -156,6 +156,7 @@ function checkCookiess(){
 	  // Num cookies
 		console.log("x");
 		ncookie[i] = getCookie("num" + i);
+		console.log("x");
 		if(ncookie[i] != undefined)
 			num[i] = ncookie[i];
 		else
