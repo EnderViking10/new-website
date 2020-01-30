@@ -66,11 +66,11 @@ inc = [0,0,0,0,0,0,0,0,0,0],
 num = [0,0,0,0,0,0,0,0,0,0],
 bar = []
 
-checkCookiess();
 
 function run(){
+	checkCookiess();
 	for(let i=0; i<10; i++){
-		
+				
 		setCookie("num" + i, num[i], 365);
 		setCookie("inc" + i, inc[i], 365);
 		
