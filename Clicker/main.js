@@ -141,6 +141,7 @@ function getCookie(cname) {
 
 function checkCookie() {
   // Money cookies
+	console.log("x");
 	var mcookie = getCookie("money");
 	if (mcookie != undefined)
 		money = mcookie;
