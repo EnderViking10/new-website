@@ -153,11 +153,9 @@ function checkCookiess(){
 	for(let i=0; i<9; i++){
 	  // Num cookies
 		var ncookie = [],
-icookie = [];
+		icookie = [];
 		
-		console.log("x");
-		ncookie[i] = 5;
-		console.log("x");
+		ncookie[i] = getCookie("num" + i);
 		if(ncookie[i] != undefined)
 			num[i] = ncookie[i];
 		else
