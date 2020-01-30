@@ -16,7 +16,7 @@ function button2(){
 
 function button3(){
 	if(money >= 200){
-		inc[2] += .25;
+		inc[2] += .33;
 		num[2] += 1;
 		money -= 200;
 	}
@@ -24,7 +24,7 @@ function button3(){
 
 function button4(){
 	if(money >= 400){
-		inc[3] += .125;
+		inc[3] += .25;
 		num[3] += 1;
 		money -= 400;
 	}
@@ -32,7 +32,7 @@ function button4(){
 
 function button5(){
 	if(money >= 800){
-		inc[4] += .0625;
+		inc[4] += .2;
 		num[4] += 1;
 		money -= 800;
 	}
@@ -40,7 +40,7 @@ function button5(){
 
 function button6(){
 	if(money >= 1600){
-		inc[5] += .03125;
+		inc[5] += .166;
 		num[5] += 1;
 		money -= 1600;
 	}
@@ -48,7 +48,7 @@ function button6(){
 
 function button7(){
 	if(money >= 3200){
-		inc[6] += .015625;
+		inc[6] += .142;
 		num[6] += 1;
 		money -= 3200;
 	}
@@ -56,7 +56,7 @@ function button7(){
 
 function button8(){
 	if(money >= 6300){
-		inc[7] += .0078125;
+		inc[7] += .125;
 		num[7] += 1;
 		money -= 6400;
 	}
@@ -64,7 +64,7 @@ function button8(){
 
 function button9(){
 	if(money >= 12800){
-		inc[8] += .00390625;
+		inc[8] += .111;
 		num[8] += 1;
 		money -= 12800;
 	}
@@ -72,7 +72,7 @@ function button9(){
 
 function button10(){
 	if(money >= 25600){
-		inc[9] += .001953125;
+		inc[9] += .1;
 		num[9] += 1;
 		money -= 25600;
 	}
