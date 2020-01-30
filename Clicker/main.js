@@ -66,9 +66,9 @@ inc = [0,0,0,0,0,0,0,0,0,0],
 num = [0,0,0,0,0,0,0,0,0,0],
 bar = []
 
+checkCookiess();
 
 function run(){
-	checkCookiess();
 	for(let i=0; i<10; i++){
 				
 		setCookie("num" + i, num[i], 365);
@@ -156,8 +156,8 @@ function checkCookie() {
 function checkCookiess(){
 	for(let i=0; i<9; i++){
 	  // Num cookies
-		ncookie[i] = getCookie("num" + i);	1
-		console.log(getCookie("num" + i));
+		console.log("x");
+		ncookie[i] = getCookie("num" + i);
 		if(ncookie[i] != undefined)
 			num[i] = ncookie[i];
 		else
