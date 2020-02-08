@@ -87,18 +87,26 @@ function ball(){
 		score += 1;
 	}
 
-	if(bX < 30 && bY > pY && bY < pY+200){
-		dX = -dX;
-		score += 1;
-	}
-
-	if(bX < 20 || bX > cw-20){
-		if(num == 2){
-			bX = 400;
-			score -= 1;
-		}
-		else
+	if(bX < 30){
+		if(bY > pY && bY < pY+200){
 			dX = -dX;
+			score += 1;
+		}
+		else{
+			dX = 390;
+			score-=1;
+		}
+	}
+	
+	if(bX > 750){
+		if(bY > pY && bY < pY+200){
+			dX = -dX;
+			score += 1;
+		}
+		else{
+			dX = 390;
+			score-=1;
+		}
 	}
 
 	if(bY > ch-20 || bY < 0)
