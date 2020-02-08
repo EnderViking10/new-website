@@ -142,13 +142,11 @@ function getCookie(cname) {
 function checkCookie() {
   // Money cookies
 	var mcookie = parseInt(getCookie("money"));
-	if (mcookie != undefined)
+	if (mcookie != undefined || mcookie != NaN)
 		money = mcookie;
 	else
 		setCookie("money", money, 365);
 }
-
-
 
 function checkCookiess(){
 	for(let i=0; i<9; i++){
@@ -157,7 +155,7 @@ function checkCookiess(){
 		icookie = [];
 		
 		ncookie[i] = parseInt(getCookie("num" + i));
-		if(ncookie[i] != undefined)
+		if(ncookie[i] != undefined || ncookie[i] != NaN)
 			num[i] = ncookie[i];
 		else
 			setCookie("num" + i, num[i], 365);
