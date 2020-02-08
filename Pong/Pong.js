@@ -1,11 +1,11 @@
 /* 
-		   ___________
-		  /                  \
-		 /  Erik Klem     \
-		/    Period 7       \
-		\  Program 6b    /
-		 \  20 Points      /
-		  \ Due Jan. 16  /
+		   _____________
+		  /             \
+		 /  Erik Klem    \
+		/    Period 7     \
+		\  Program 6b     /
+		 \  20 Points    /
+		  \ Due Jan. 16 /
 		   \___________/   
 */    
 var canvas, c;
@@ -83,7 +83,7 @@ function ball(){
 	c.closePath();
 
 	if(bX < 30){
-		if(bY > pY && bY < pY+200){
+		if(bY+20 > pY && bY < pY+200){
 			dX = -dX;
 			score += 1;
 		}
@@ -94,7 +94,7 @@ function ball(){
 	}
 	
 	if(bX > 750 && num != 1){
-		if(bY > pY && bY < pY+200){
+		if(bY+20 > pY && bY < pY+200){
 			dX = -dX;
 			score += 1;
 		}
