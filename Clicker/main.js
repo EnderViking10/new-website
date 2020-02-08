@@ -141,7 +141,7 @@ function getCookie(cname) {
 
 function checkCookie() {
   // Money cookies
-	var mcookie = parseInt(getCookie("money"));
+	var mcookie = getCookie("money");
 	if (mcookie != undefined || mcookie != NaN)
 		money = mcookie;
 	else
@@ -154,7 +154,7 @@ function checkCookiess(){
 		var ncookie = [],
 		icookie = [];
 		
-		ncookie[i] = parseInt(getCookie("num" + i));
+		ncookie[i] = getCookie("num" + i);
 		if(ncookie[i] != undefined || ncookie[i] != NaN)
 			num[i] = ncookie[i];
 		else
