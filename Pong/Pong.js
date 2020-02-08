@@ -88,7 +88,7 @@ function ball(){
 			score += 1;
 		}
 		else{
-			dX = 390;
+			bX = 390;
 			score-=1;
 		}
 	}
@@ -99,10 +99,12 @@ function ball(){
 			score += 1;
 		}
 		else{
-			dX = 390;
+			bX = 390;
 			score-=1;
 		}
 	}
+	else if(bX > 780)
+		dX = -dX
 
 	if(bY > ch-20 || bY < 0)
 		dY = -dY;
