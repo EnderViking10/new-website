@@ -20,8 +20,6 @@ function initialize() {
 
 
 function drawScreen() {
-
-	setCookie("money", money, 365);
 	
   // Background
 
@@ -56,6 +54,8 @@ function drawScreen() {
 	}
 
 	run();
+	
+	setCookie("money", money, 365);
 
 } // end drawScreen
 
@@ -69,9 +69,6 @@ checkCookiess();
 function run(){
 	for(let i=0; i<10; i++){
 				
-		setCookie("num" + i, num[i], 365);
-		setCookie("inc" + i, inc[i], 365);
-		
 		bar[i] = document.getElementById("bar" + (i+1));
 
 		progress[i] += inc[i];
@@ -110,6 +107,10 @@ function run(){
 					money += 2560;
 					break;
 			}
+			
+		setCookie("num" + i, num[i], 365);
+		setCookie("inc" + i, inc[i], 365);
+		
 		}
 	if(inc[i] < 100)
 		bar[i].style.width = progress[i] + "%";
