@@ -71,6 +71,9 @@ function run(){
 				
 		bar[i] = document.getElementById("bar" + (i+1));
 
+		setCookie("num" + i, num[i], 365);
+		setCookie("inc" + i, inc[i], 365);
+		
 		progress[i] += inc[i];
 
 		if(progress[i] > 100){
@@ -107,10 +110,6 @@ function run(){
 					money += 2560;
 					break;
 			}
-			
-		setCookie("num" + i, num[i], 365);
-		setCookie("inc" + i, inc[i], 365);
-		
 		}
 	if(inc[i] < 100)
 		bar[i].style.width = progress[i] + "%";
