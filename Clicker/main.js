@@ -162,7 +162,7 @@ function checkCookiess(){
 		
 	  // Inc cookies
 		icookie[i] = getCookie("inc" + i);
-		if(icookie[i] != undefined || icookie[i] = NaN)
+		if(icookie[i] != undefined || icookie[i] != NaN)
 			inc[i] = parseInt(icookie[i]);
 		else
 			setCookie("inc" + i, inc[i],365);
