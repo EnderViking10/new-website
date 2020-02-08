@@ -82,11 +82,6 @@ function ball(){
 	c.fillRect(bX,bY,20,20);
 	c.closePath();
 
-	if(bX > cw-50 && bY > pY && bY < pY+200 && num != 2){
-		dX = -dX;
-		score += 1;
-	}
-
 	if(bX < 30){
 		if(bY > pY && bY < pY+200){
 			dX = -dX;
@@ -98,7 +93,7 @@ function ball(){
 		}
 	}
 	
-	if(bX > 750){
+	if(bX > 750 && num != 1){
 		if(bY > pY && bY < pY+200){
 			dX = -dX;
 			score += 1;
