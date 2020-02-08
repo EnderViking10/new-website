@@ -118,7 +118,7 @@ function run(){
 	}
 }
 
-function setCookie(cname, cvalue, exdays) {
+function setCookie(cname, cvalue, exdays){
 	var d = new Date();
 	d.setTime(d.getTime() + (exdays*24*60*60*1000));
 	var expires = "expires="+ d.toUTCString();
@@ -129,9 +129,9 @@ function getCookie(cname) {
 	var name = cname + "=";
 	var decodedCookie = decodeURIComponent(document.cookie);
 	var ca = decodedCookie.split(';');
-	for(var i = 0; i <ca.length; i++) {
+	for(var i = 0; i <ca.length; i++){
 	var car = ca[i];
-		while (car.charAt(0) == ' ') {
+		while (car.charAt(0) == ' '){
 		  car = car.substring(1);
 		}
 		if (car.indexOf(name) == 0) 
@@ -139,11 +139,11 @@ function getCookie(cname) {
 	}
 }
 
-function checkCookie() {
+function checkCookie(){
   // Money cookies
 	var mcookie = getCookie("money");
 	if (mcookie != undefined || mcookie != NaN)
-		money = mcookie;
+		money = parseInt(mcookie);
 	else
 		setCookie("money", money, 365);
 }
@@ -156,13 +156,13 @@ function checkCookiess(){
 		
 		ncookie[i] = getCookie("num" + i);
 		if(ncookie[i] != undefined || ncookie[i] != NaN)
-			num[i] = ncookie[i];
+			num[i] = parseInt(ncookie[i]);
 		else
 			setCookie("num" + i, num[i], 365);
 		
 	  // Inc cookies
 		icookie[i] = getCookie("inc" + i);
-		if(icookie[i] != undefined)
+		if(icookie[i] != undefined || icookie[i] = NaN)
 			inc[i] = parseInt(icookie[i]);
 		else
 			setCookie("inc" + i, inc[i],365);
