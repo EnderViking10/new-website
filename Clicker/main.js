@@ -142,7 +142,7 @@ function getCookie(cname) {
 function checkCookie(){
   // Money cookies
 	var mcookie = getCookie("money");
-	if (mcookie != undefined || mcookie != NaN)
+	if (mcookie != undefined && mcookie != NaN)
 		money = parseInt(mcookie);
 	else
 		setCookie("money", money, 365);
@@ -155,14 +155,14 @@ function checkCookiess(){
 		icookie = [];
 		
 		ncookie[i] = getCookie("num" + i);
-		if(ncookie[i] != undefined || ncookie[i] != NaN)
+		if(ncookie[i] != undefined && ncookie[i] != NaN)
 			num[i] = parseInt(ncookie[i]);
 		else
 			setCookie("num" + i, num[i], 365);
 		
 	  // Inc cookies
 		icookie[i] = getCookie("inc" + i);
-		if(icookie[i] != undefined || icookie[i] != NaN)
+		if(icookie[i] != undefined && icookie[i] != NaN)
 			inc[i] = parseInt(icookie[i]);
 		else
 			setCookie("inc" + i, inc[i],365);
