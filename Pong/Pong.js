@@ -131,7 +131,7 @@ function paddle(x){
 	c.closePath();
 
 	if(myY < 700)
-		pY = myY;
+		pY = myY-100;
 
 }
 
