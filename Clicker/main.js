@@ -13,7 +13,7 @@ function initialize() {
 		var ch = canvas.height;
 
 		//drawScreen();   // call the function to draw once
-		window.setInterval("drawScreen()",10/3);  // call repeatedly
+		window.setInterval("drawScreen()",1000/30);  // call repeatedly
 
 	} // end if
 } // initialize()
