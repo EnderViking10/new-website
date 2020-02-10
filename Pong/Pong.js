@@ -108,7 +108,7 @@ function ball(){
 		else{
 			bX = 390;
 			score-=1;
-			/wall.play();
+			//wall.play();
 		}
 	}
 	else if(bX > 780)
