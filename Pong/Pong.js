@@ -95,7 +95,7 @@ function ball(){
 		else{
 			bX = 390;
 			score-=1;
-			//wall.play();
+			//soundW.play();
 		}
 	}
 	
@@ -108,7 +108,7 @@ function ball(){
 		else{
 			bX = 390;
 			score-=1;
-			//wall.play();
+			//soundW.play();
 		}
 	}
 	else if(bX > 780)
