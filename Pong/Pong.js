@@ -24,7 +24,7 @@ function initialize() {
 		
 	  // Mouse input
 
-        canvas.addEventListener("mousemove", function(mouse){ myY = mouse.pageY-canvas.offsetTop; });
+        window.addEventListener("mousemove", function(mouse){ myY = mouse.pageY-canvas.offsetTop; });
 
 		// Center of screen
 		
