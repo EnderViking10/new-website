@@ -12,6 +12,10 @@ var canvas, c;
 var midx, midy, cw, ch;
 var myX;
 var num = 1;
+/*
+var soundP = new Audio(audio/paddle.wav);
+var soundW = new Audio(audio/wall.wav);
+*/
 
 function initialize() {
     canvas = document.getElementById( "canvas" );
@@ -86,10 +90,12 @@ function ball(){
 		if(bY+20 > pY && bY < pY+200){
 			dX = -dX;
 			score += 1;
+			//soundP.play();
 		}
 		else{
 			bX = 390;
 			score-=1;
+			//wall.play();
 		}
 	}
 	
@@ -97,10 +103,12 @@ function ball(){
 		if(bY+20 > pY && bY < pY+200){
 			dX = -dX;
 			score += 1;
+			//soundP.play();
 		}
 		else{
 			bX = 390;
 			score-=1;
+			/wall.play();
 		}
 	}
 	else if(bX > 780)
