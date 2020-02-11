@@ -59,10 +59,10 @@ function drawScreen() {
 	c.closePath();
 
 	ball(); // Draws ball
-	paddle(0); // Draws left paddle
+	vertPaddle(0); // Draws left paddle
 
 	if(num  ==  2)
-		paddle(770); // Draws right paddle
+		vertPaddle(770); // Draws right paddle
 
 }
 
@@ -124,12 +124,12 @@ function ball(){
 
 /*
 I don't like block comments like this
-draws and moves the paddle. Read comments in function
+draws and moves the vertical paddles. Read comments in function
 */
 
 var pY = 350;
 
-function paddle(x){
+function vertPaddle(x){
 
   // Draws and moves paddle
 
@@ -142,6 +142,11 @@ function paddle(x){
 		pY = myY-100;
 
 }
+
+/*
+I don't like block comments like this
+draws and moves the horizontal paddles. Read comments in function
+*/
 
 /*
 I don't like block comments like this
