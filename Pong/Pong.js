@@ -10,7 +10,7 @@
 */    
 var canvas, c;
 var midx, midy, cw, ch;
-var myX;
+var myY;
 var num = 1;
 /*
 var soundP = new Audio(audio/paddle.wav);
@@ -24,7 +24,7 @@ function initialize() {
 		
 	  // Mouse input
 
-        window.addEventListener("mousemove", function(mouse){ var myY = mouse.pageY-canvas.offsetTop; });
+        window.addEventListener("mousemove", function(mouse){ myY = mouse.pageY-canvas.offsetTop; });
 
 		// Center of screen
 		
