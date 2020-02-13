@@ -111,7 +111,7 @@ function drawSnake(sp){
 	 // Draws snake
 
 	c.beginPath();
-	c.fillStyle = "white";
+	c.fillStyle = "green";
 	c.strokeStyle = "black";
 	c.fillRect(sp.x, sp.y, 20, 20);
 	c.strokeRect(sp.x, sp.y, 20, 20);
