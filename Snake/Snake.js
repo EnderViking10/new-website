@@ -120,12 +120,13 @@ function drawSnake(sp){
 
 function advanceSnake() {  
 	const head = {x: snake[0].x + dx, y: snake[0].y + dy};
+	const head2 = {x: snake[0].x + dx + 20, y: snake[0].y + dy + 20};
 	if(snake[0].x == foodX && snake[0].y == foodY){
 		foodX = 20*parseInt(Math.random()*40);
  		foodY = 20*parseInt(Math.random()*30);
  		score++;
 		snake.unshift(head);
-		snake.unshift(head);
+		snake.unshift(head2);
 	}
 	else{
 		snake.unshift(head);
