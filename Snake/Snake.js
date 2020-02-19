@@ -89,7 +89,7 @@ function drawScreen(){
   // Draws food
 
   	c.beginPath();
-  	c.fillStyle = "Red";
+  	c.fillStyle = "#e60000";
   	c.fillRect(foodX, foodY,20,20);
   	c.closePath();
 
@@ -126,14 +126,14 @@ if(dx < -1)
 if(dx > 1)
 	dx2 = dx+20;
 else
-	dx2 = dx;
+	dx2 = 0;
 
 if(dy < -1)
 	dy2 = dy-20;
 if(dy > 1)
 	dy2 = dy+20;
 else
-	dy2 = dy;
+	dy2 = 0;
 
 function advanceSnake() {  
 	const head = {x: snake[0].x + dx, y: snake[0].y + dy};
