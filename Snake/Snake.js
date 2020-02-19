@@ -2,7 +2,7 @@ var canvas, c;
 var midx, midy, cw, ch;
 var pi = Math.PI;
 var snake = [ {x: 20, y: 20} ];
-var dx = 0, dy = 0;
+var dx = 0, dy = 0, dx2 = 0, dy2 = 0;
 var foodX  = 20*parseInt(Math.random()*40), foodY = 20*parseInt(Math.random()*30);
 var score = 0;
 var count = 0;
@@ -22,44 +22,68 @@ function initialize() {
 		document.addEventListener("keydown", function(key){
 			switch(key.keyCode){
 				case 87: // w
-					dx = 0;
-					if(dy != 20)
-					dy = -20;
+					if(dy != 20){
+						dx = 0;
+						dx2 = 0;
+						dy = -20;
+						dy2 = -40;
+					}
 					break;
 				case 83: // s
-					dx = 0;
-					if(dy != -20)
-					dy = 20;
+					if(dy != -20){
+						dx = 0;
+						dx2 = 0;
+						dy = 20;
+						dy2 = 40;
+					}
 					break;
 				case 65: // a
-					if(dx != 20)
-					dx = -20;
-					dy = 0;
+					if(dx != 20){
+						dx = -20;
+						dx2 = -40;
+						dy = 0;
+						dy = 0;
+					}
 					break;
 				case 68: // d
-					if(dx != -20)
-					dx = 20;
-					dy = 0;
+					if(dx != -20){
+						dx = 20;
+						dx2 = 40;
+						dy = 0;
+						dy2 = 0;
+					}
 					break;
 				case 38: // ua
-					dx = 0;
-					if(dy != 20)
-					dy = -20;
+					if(dy != 20){
+						dx = 0;
+						dx2 = 0;
+						dy = -20;
+						dy2 = -40;
+					}
 					break;
 				case 40: // da
-					dx = 0;
-					if(dy != -20)
-					dy = 20;
+					if(dy != -20){
+						dx = 0;
+						dx2 = 0;
+						dy = 20;
+						dy2 = 40;
+					}
 					break;
 				case 37: // la
-					if(dx != 20)
-					dx = -20;
-					dy = 0;
+					if(dx != 20){
+						dx = -20;
+						dx2 = -40;
+						dy = 0;
+						dy = 0;
+					}
 					break;
-				case 	39: // ra
-					if(dx != -20)
-					dx = 20;
-					dy = 0;
+				case 39: // ra
+					if(dx != -20){
+						dx = 20;
+						dx2 = 40;
+						dy = 0;
+						dy2 = 0;
+					}
 					break;
 			}
 			if(key.keyCode == 82)
@@ -117,23 +141,6 @@ function drawSnake(sp){
 	c.strokeRect(sp.x, sp.y, 20, 20);
 	c.closePath();
 }
-
-var dx2 = 0;
-var dy2 = 0;
-
-if(dx < -1)
-	dx2 = dx-20;
-if(dx > 1)
-	dx2 = dx+20;
-else
-	dx2 = 0;
-
-if(dy < -1)
-	dy2 = dy-20;
-if(dy > 1)
-	dy2 = dy+20;
-else
-	dy2 = 0;
 
 function advanceSnake() {  
 	const head = {x: snake[0].x + dx, y: snake[0].y + dy};
