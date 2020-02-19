@@ -118,24 +118,26 @@ function drawSnake(sp){
 	c.closePath();
 }
 
-var dx2 = 0, dy2 = 0;
+var dx2 = 0;
+var dy2 = 0;
+
+if(dx < -1)
+	dx2 = dx-20;
+if(dx > 1)
+	dx2 = dx+20;
+else
+	dx2 = dx;
+
+if(dy < -1)
+	dy2 = dy-20;
+if(dy > 1)
+	dy2 = dy+20;
+else
+	dy2 = dy;
+
 function advanceSnake() {  
 	const head = {x: snake[0].x + dx, y: snake[0].y + dy};
-	if(dx == 20)
-		dx2 = 40
-	else if(dx == -20)
-		dx2 = -40;
-	else
-		dx2 = 0
-	if(dy == 20)
-		dy2 = 40;
-	else if(dy == -20)
-		dy = -40
-	else
-		dy2 = 0;
-	
 	const head2 = {x: snake[0].x + dx2, y: snake[0].y + dy2};
-	
 	
 	if(snake[0].x == foodX && snake[0].y == foodY){
 		foodX = 20*parseInt(Math.random()*40);
