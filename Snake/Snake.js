@@ -182,8 +182,10 @@ function reset(){
 	snake = [ {x: 20, y: 20} ];
 	foodX  = 20*parseInt(Math.random()*40);
 	foodY = 20*parseInt(Math.random()*30);
-	dx = 0;
-	dy = 0;
+	for(let i=0; i<4; i++){
+		dx[i] = 0;
+		dy[i] = 0;
+	}
 	score = 0;
 }
 
