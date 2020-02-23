@@ -2,18 +2,24 @@
 <html>
 
 <head>
-   <meta charset="UTF-8">
-   <title>Snake</title>
-   <script src = "Snake.js">
-   </script>
+	<meta charset="UTF-8">
+	<title>Snake</title>
+	<script src = "Snake.js"></script>
 </head>
 
 <body onload="initialize();">
-   <div id="container">
-      <canvas id="canvas" width="800" height="600">
-         Browser does NOT support HTML5 Canvas
-      </canvas>
-   </div>
+	<div id="container">
+		<canvas id="canvas" width="800" height="600">
+			Browser does NOT support HTML5 Canvas
+		</canvas>
+	</div>
+	<select id="select onchange="select(choice);">
+		<option>1</option>
+		<option>2</option>
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+	</select>
 </body>
 
 </html>
