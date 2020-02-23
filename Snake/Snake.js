@@ -21,7 +21,7 @@ function initialize() {
 		ch = canvas.height;
 		
 		document.addEventListener("keydown", function(key){
-			for(let i=0; i<4; i++){
+			for(let i=0; i<num; i++){
 				switch(key.keyCode){
 					case 87: // w
 						if(dy[0] != 20){
@@ -195,5 +195,4 @@ function looser(){
 
 function select(choice){
 	num = choice.target.value;
-	console.log(num);
 }
