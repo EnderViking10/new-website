@@ -25,7 +25,7 @@ function initialize() {
 					if(dy[0] != 20){
 						for(let i=0; i<4; i++){
 							dx[i] = 0;
-							dy[i] = -(i*20);
+							dy[i] = -(i*20+20);
 						}
 					}
 					break;
@@ -33,14 +33,14 @@ function initialize() {
 					if(dy[0] != -20){
 						for(let i=0; i<4; i++){
 							dx[i] = 0;
-							dy[i] = i*20;
+							dy[i] = i*20+20;
 						}
 					}
 					break;
 				case 65: // a
 					if(dx[0] != 20){
 						for(let i=0; i<4; i++){
-							dx[i] = -(i*20);
+							dx[i] = -(i*20+20);
 							dy[i] = 0;
 						}
 					}
@@ -48,7 +48,7 @@ function initialize() {
 				case 68: // d
 					if(dx[0] != -20){
 						for(let i=0; i<4; i++){
-							dx[i] = i*20;
+							dx[i] = i*20+20;
 							dy[i] = 0;
 						}
 					}
@@ -57,7 +57,7 @@ function initialize() {
 					if(dy[0] != 20){
 						for(let i=0; i<4; i++){
 							dx[i] = 0;
-							dy[i] = -(i*20);
+							dy[i] = -(i*20+20);
 						}
 					}
 					break;
@@ -65,14 +65,14 @@ function initialize() {
 					if(dy[0] != -20){
 						for(let i=0; i<4; i++){
 							dx[i] = 0;
-							dy[i] = i*20;
+							dy[i] = i*20+20;
 						}
 					}
 					break;
 				case 37: // la
 					if(dy[0] != 20){
 						for(let i=0; i<4; i++){
-							dx[i] = -(i*20);
+							dx[i] = -(i*20+20);
 							dy[i] = 0;
 						}
 					}
@@ -80,7 +80,7 @@ function initialize() {
 				case 39: // ra
 					if(dx[0] != -20){
 						for(let i=0; i<4; i++){
-							dx[i] = i*20;
+							dx[i] = i*20+20;
 							dy[i] = 0;
 						}
 					}
