@@ -194,6 +194,6 @@ function looser(){
 }
 
 function select(choice){
-	num = choice.target.value;
-	console.log("x");
+	num = choice;
+	console.log(num);
 }
