@@ -2,7 +2,7 @@ var canvas, c;
 var midx, midy, cw, ch;
 var pi = Math.PI;
 var snake = [ {x: 20, y: 20} ];
-var dx = 0, dy = 0, dx2 = 0, dy2 = 0;
+var dx = [0,0,0,0,0], dy = [0,0,0,0,0];
 var foodX  = 20*parseInt(Math.random()*40), foodY = 20*parseInt(Math.random()*30);
 var score = 0;
 var count = 0;
@@ -22,67 +22,67 @@ function initialize() {
 		document.addEventListener("keydown", function(key){
 			switch(key.keyCode){
 				case 87: // w
-					if(dy != 20){
-						dx = 0;
-						dx2 = 0;
-						dy = -20;
-						dy2 = -40;
+					if(dy[0] != 20){
+						for(let i=0; i<4; i++){
+							dx[i] = 0;
+							dy[i] = -(i*20);
+						}
 					}
 					break;
 				case 83: // s
-					if(dy != -20){
-						dx = 0;
-						dx2 = 0;
-						dy = 20;
-						dy2 = 40;
+					if(dy[0] != -20){
+						for(let i=0; i<4; i++){
+							dx[i] = 0;
+							dy[i] = i*20;
+						}
 					}
 					break;
 				case 65: // a
-					if(dx != 20){
-						dx = -20;
-						dx2 = -40;
-						dy = 0;
-						dy = 0;
+					if(dx[0] != 20){
+						for(let i=0; i<4; i++){
+							dx[i] = -(i*20);
+							dy[i] = 0;
+						}
 					}
 					break;
 				case 68: // d
-					if(dx != -20){
-						dx = 20;
-						dx2 = 40;
-						dy = 0;
-						dy2 = 0;
+					if(dx[0] != -20){
+						for(let i=0; i<4; i++){
+							dx[i] = i*20;
+							dy[i] = 0;
+						}
 					}
 					break;
 				case 38: // ua
-					if(dy != 20){
-						dx = 0;
-						dx2 = 0;
-						dy = -20;
-						dy2 = -40;
+					if(dy[0] != 20){
+						for(let i=0; i<4; i++){
+							dx[i] = 0;
+							dy[i] = -(i*20);
+						}
 					}
 					break;
 				case 40: // da
-					if(dy != -20){
-						dx = 0;
-						dx2 = 0;
-						dy = 20;
-						dy2 = 40;
+					if(dy[0] != -20){
+						for(let i=0; i<4; i++){
+							dx[i] = 0;
+							dy[i] = i*20;
+						}
 					}
 					break;
 				case 37: // la
-					if(dx != 20){
-						dx = -20;
-						dx2 = -40;
-						dy = 0;
-						dy2 = 0;
+					if(dy[0] != 20){
+						for(let i=0; i<4; i++){
+							dx[i] = -(i*20);
+							dy[i] = 0;
+						}
 					}
 					break;
 				case 39: // ra
-					if(dx != -20){
-						dx = 20;
-						dx2 = 40;
-						dy = 0;
-						dy2 = 0;
+					if(dx[0] != -20){
+						for(let i=0; i<4; i++){
+							dx[i] = i*20;
+							dy[i] = 0;
+						}
 					}
 					break;
 			}
@@ -142,19 +142,24 @@ function drawSnake(sp){
 	c.closePath();
 }
 
-function advanceSnake() {  
-	const head = {x: snake[0].x + dx, y: snake[0].y + dy};
-	const head2 = {x: snake[0].x + dx2, y: snake[0].y + dy2};
-	
+var head = [];
+
+function advanceSnake(){
+	for(let i=0; i<4; i++){
+		const obj = {x: snake[0].x + dx[i], y: snake[0].y + dy[i]};
+		head[i] = obj;
+	}
+		
 	if(snake[0].x == foodX && snake[0].y == foodY){
 		foodX = 20*parseInt(Math.random()*40);
  		foodY = 20*parseInt(Math.random()*30);
  		score++;
-		snake.unshift(head);
-		snake.unshift(head2);
+		for(let i=0; i<4; i++){
+			snake.unshift(head[i]);
+		}
 	}
 	else{
-		snake.unshift(head);
+		snake.unshift(head[0]);
 		snake.pop();
 	}
 }
