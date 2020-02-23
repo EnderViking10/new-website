@@ -21,71 +21,57 @@ function initialize() {
 		ch = canvas.height;
 		
 		document.addEventListener("keydown", function(key){
-			switch(key.keyCode){
-				case 87: // w
-					if(dy[0] != 20){
-						for(let i=0; i<num; i++){
+			for(let i=0; i<4; i++){
+				switch(key.keyCode){
+					case 87: // w
+						if(dy[0] != 20){
 							dx[i] = 0;
 							dy[i] = -(i*20+20);
 						}
-					}
-					break;
-				case 83: // s
-					if(dy[0] != -20){
-						for(let i=0; i<num; i++){
+						break;
+					case 83: // s
+						if(dy[0] != -20){
 							dx[i] = 0;
 							dy[i] = i*20+20;
 						}
-					}
-					break;
-				case 65: // a
-					if(dx[0] != 20){
-						for(let i=0; i<num; i++){
+						break;
+					case 65: // a
+						if(dx[0] != 20){
 							dx[i] = -(i*20+20);
 							dy[i] = 0;
 						}
-					}
-					break;
-				case 68: // d
-					if(dx[0] != -20){
-						for(let i=0; i<num; i++){
+						break;
+					case 68: // d
+						if(dx[0] != -20){
 							dx[i] = i*20+20;
 							dy[i] = 0;
 						}
-					}
-					break;
-				case 38: // ua
-					if(dy[0] != 20){
-						for(let i=0; i<num; i++){
+						break;
+					case 38: // ua
+						if(dy[0] != 20){
 							dx[i] = 0;
 							dy[i] = -(i*20+20);
 						}
-					}
-					break;
-				case 40: // da
-					if(dy[0] != -20){
-						for(let i=0; i<num; i++){
+						break;
+					case 40: // da
+						if(dy[0] != -20){
 							dx[i] = 0;
 							dy[i] = i*20+20;
 						}
-					}
-					break;
-				case 37: // la
-					if(dx[0] != 20){
-						for(let i=0; i<num; i++){
+						break;
+					case 37: // la
+						if(dx[0] != 20){
 							dx[i] = -(i*20+20);
 							dy[i] = 0;
 						}
-					}
-					break;
-				case 39: // ra
-					if(dx[0] != -20){
-						for(let i=0; i<num; i++){
+						break;
+					case 39: // ra
+						if(dx[0] != -20){
 							dx[i] = i*20+20;
 							dy[i] = 0;
 						}
-					}
-					break;
+						break;
+				}
 			}
 			if(key.keyCode == 82)
 				reset();
