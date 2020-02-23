@@ -74,7 +74,7 @@ function initialize() {
 						dx = -20;
 						dx2 = -40;
 						dy = 0;
-						dy = 0;
+						dy2 = 0;
 					}
 					break;
 				case 39: // ra
