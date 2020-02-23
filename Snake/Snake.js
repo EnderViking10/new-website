@@ -161,6 +161,7 @@ function advanceSnake(){
 	else{
 		snake.unshift(head[0]);
 		snake.pop();
+		console.log(head[0]);
 	}
 }
 
