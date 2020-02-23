@@ -70,7 +70,7 @@ function initialize() {
 					}
 					break;
 				case 37: // la
-					if(dy[0] != 20){
+					if(dx[0] != 20){
 						for(let i=0; i<4; i++){
 							dx[i] = -(i*20+20);
 							dy[i] = 0;
