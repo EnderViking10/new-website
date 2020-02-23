@@ -2,7 +2,7 @@ var canvas, c;
 var midx, midy, cw, ch;
 var pi = Math.PI;
 var snake = [ {x: 20, y: 20} ];
-var dx = [0], dy = [0];
+var dx = [0,0,0,0,0,0], dy = [0,0,0,0,0];
 var foodX  = 20*parseInt(Math.random()*40), foodY = 20*parseInt(Math.random()*30);
 var score = 0;
 var count = 0;
@@ -143,6 +143,7 @@ function advanceSnake(){
  		score++;
 		for(let i=0; i<num; i++){
 			snake.unshift(head[i]);
+			console.log(num, head[i]);
 		}
 	}
 	else{
