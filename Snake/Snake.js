@@ -2,10 +2,11 @@ var canvas, c;
 var midx, midy, cw, ch;
 var pi = Math.PI;
 var snake = [ {x: 20, y: 20} ];
-var dx = [0,0,0,0,0], dy = [0,0,0,0,0];
+var dx = [0], dy = [0];
 var foodX  = 20*parseInt(Math.random()*40), foodY = 20*parseInt(Math.random()*30);
 var score = 0;
 var count = 0;
+var num = 1;
 
 function initialize() {
     canvas = document.getElementById( "canvas" );
@@ -23,7 +24,7 @@ function initialize() {
 			switch(key.keyCode){
 				case 87: // w
 					if(dy[0] != 20){
-						for(let i=0; i<4; i++){
+						for(let i=0; i<num; i++){
 							dx[i] = 0;
 							dy[i] = -(i*20+20);
 						}
@@ -31,7 +32,7 @@ function initialize() {
 					break;
 				case 83: // s
 					if(dy[0] != -20){
-						for(let i=0; i<4; i++){
+						for(let i=0; i<num; i++){
 							dx[i] = 0;
 							dy[i] = i*20+20;
 						}
@@ -39,7 +40,7 @@ function initialize() {
 					break;
 				case 65: // a
 					if(dx[0] != 20){
-						for(let i=0; i<4; i++){
+						for(let i=0; i<num; i++){
 							dx[i] = -(i*20+20);
 							dy[i] = 0;
 						}
@@ -47,7 +48,7 @@ function initialize() {
 					break;
 				case 68: // d
 					if(dx[0] != -20){
-						for(let i=0; i<4; i++){
+						for(let i=0; i<num; i++){
 							dx[i] = i*20+20;
 							dy[i] = 0;
 						}
@@ -55,7 +56,7 @@ function initialize() {
 					break;
 				case 38: // ua
 					if(dy[0] != 20){
-						for(let i=0; i<4; i++){
+						for(let i=0; i<num; i++){
 							dx[i] = 0;
 							dy[i] = -(i*20+20);
 						}
@@ -63,7 +64,7 @@ function initialize() {
 					break;
 				case 40: // da
 					if(dy[0] != -20){
-						for(let i=0; i<4; i++){
+						for(let i=0; i<num; i++){
 							dx[i] = 0;
 							dy[i] = i*20+20;
 						}
@@ -71,7 +72,7 @@ function initialize() {
 					break;
 				case 37: // la
 					if(dx[0] != 20){
-						for(let i=0; i<4; i++){
+						for(let i=0; i<num; i++){
 							dx[i] = -(i*20+20);
 							dy[i] = 0;
 						}
@@ -79,7 +80,7 @@ function initialize() {
 					break;
 				case 39: // ra
 					if(dx[0] != -20){
-						for(let i=0; i<4; i++){
+						for(let i=0; i<num; i++){
 							dx[i] = i*20+20;
 							dy[i] = 0;
 						}
@@ -145,7 +146,7 @@ function drawSnake(sp){
 var head = [];
 
 function advanceSnake(){
-	for(let i=0; i<4; i++){
+	for(let i=0; i<num; i++){
 		const obj = {x: snake[0].x + dx[i], y: snake[0].y + dy[i]};
 		head[i] = obj;
 	}
@@ -154,14 +155,13 @@ function advanceSnake(){
 		foodX = 20*parseInt(Math.random()*40);
  		foodY = 20*parseInt(Math.random()*30);
  		score++;
-		for(let i=0; i<4; i++){
+		for(let i=0; i<num; i++){
 			snake.unshift(head[i]);
 		}
 	}
 	else{
 		snake.unshift(head[0]);
 		snake.pop();
-		console.log(head[0]);
 	}
 }
 
@@ -182,7 +182,7 @@ function reset(){
 	snake = [ {x: 20, y: 20} ];
 	foodX  = 20*parseInt(Math.random()*40);
 	foodY = 20*parseInt(Math.random()*30);
-	for(let i=0; i<4; i++){
+	for(let i=0; i<num; i++){
 		dx[i] = 0;
 		dy[i] = 0;
 	}
@@ -204,4 +204,8 @@ function looser(){
 	c.fillText("You lost with a score of " + score, midx, midy);
 	c.stroke();
 	c.closePath();
+}
+
+function select(choice){
+	num = choice.target.value;
 }
