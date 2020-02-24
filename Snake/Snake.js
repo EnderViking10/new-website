@@ -25,7 +25,7 @@ function initialize() {
 				case 87: // w
 					if(dy != 20){
 						dx = 0;
-						dy = 20;
+						dy = -20;
 					}
 					break;
 				case 83: // s
