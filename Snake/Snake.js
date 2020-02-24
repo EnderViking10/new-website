@@ -142,10 +142,8 @@ function advanceSnake(){
 		
 		snake.unshift(head);
 		
-		if(frame == num){
+		if(frame == num)
 			frame = 0;
-			console.log(frame,num);
-		}
 		else
 			frame++;
 	}
