@@ -75,7 +75,7 @@ function initialize() {
 				reset();
 		});
 
-		window.setInterval("drawScreen()",1000/4// call repeatedly
+		window.setInterval("drawScreen()",1000/4); // call repeatedly
 		
     } // end if
 } // initialize()
