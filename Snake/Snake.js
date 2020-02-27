@@ -135,6 +135,12 @@ function advanceSnake(){
 		frame++; 
 		food.x = 20*parseInt(Math.random()*40);
 		food.y = 20*parseInt(Math.random()*30);
+		for(let i=0; i<snake.length; i++){
+			if(snake[i].x == food.x && snake[i].y == food.y){
+				food.x = 20*parseInt(Math.random()*40);
+				food.y = 20*parseInt(Math.random()*30);
+			}
+		}
 	}
 	
 	if(frame <= num && frame > 0){
@@ -155,7 +161,7 @@ function advanceSnake(){
 
 function gameEnd() { 
 	for(let i = 2; i < snake.length; i++){
-		if (snake[i].x == snake[0].x && snake[i].y == snake[0].y) 
+		if (snake[i].x == snake[0].x && snake[i].y == snake[0].y)
 			return true;  
 	}
 	const hitLeftWall = snake[0].x < 0;  
