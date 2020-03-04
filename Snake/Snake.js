@@ -75,7 +75,7 @@ function initialize() {
 				reset();
 		});
 
-		window.setInterval("drawScreen()",1000/30); // call repeatedly
+		window.setInterval("drawScreen()",1000/120); // call repeatedly
 		
     } // end if
 } // initialize()
@@ -111,7 +111,7 @@ function drawScreen(){
     if(count > 29)
         count = 0;
   // Moves snake every 6 frames
-    if(count % 3 == 0)
+    if(count % 12 == 0)
 		advanceSnake();
 
 } // end drawScreen
