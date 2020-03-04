@@ -146,7 +146,7 @@ function advanceSnake(){
 	}
 	
 	if(frame <= num && frame > 0){
-		score++;
+		score = snake.length;
 		
 		snake.unshift(head);
 		
