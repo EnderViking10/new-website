@@ -99,7 +99,9 @@ function drawScreen(){
 
   	c.beginPath();
   	c.fillStyle = "#e60000";
+	c.strokeStyle = "black";
   	c.fillRect(food.x, food.y,20,20);
+	c.strokeRect(food.x, food.y,20,20);
   	c.closePath();
 
    // Draws and moves snake
