@@ -4,7 +4,7 @@ var pi = Math.PI;
 var snake = [ {x: 20, y: 20} ];
 var dx = 0,	 dy = 0;
 var food = { x: 20*parseInt(Math.random()*40), y: 20*parseInt(Math.random()*30) };
-var score = 1;
+var score = snake.length;
 var count = 0;
 var num = 1;
 
