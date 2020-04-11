@@ -1,7 +1,9 @@
 var canvas, c, // Canvas vars
 cw, ch, midx, midy, // Width vars
 money = 100, // Money
-wantCookie; // Do they want cookies var
+wantCookie, // Do they want cookies var
+dMoney = false,
+dOthers = false;
 
 function initialize() {
 	canvas = document.getElementById( "canvas" );
@@ -29,8 +31,13 @@ function initialize() {
 function drawScreen() {
 
 	// Checks to see if user wants cookies / sets cookies
-	if(wantCookie == true)
-		checkCookie("money", money);
+	if(wantCookie == true){
+		if(dMoney != true){
+			checkCookie("money", money)
+			dMoney = true;
+		}
+		setCookie("money", money, 365);
+	}
 	
   // Background
 
@@ -81,8 +88,13 @@ function run(){
 		
 		// Checks if user wants cookies/ sets cookies
 		if(wantCookie == true){	
-			checkCookie("num"+i, num[i]);
-			checkCookie("inc"+i, inc[i]);
+			if(dOthers != true){
+				checkCookie("num"+i, num[i]);
+				checkCookie("inc"+i, inc[i]);
+				dOthers = true;
+			}
+			setCookie("num"+i, num[i], 365);
+			setCookie("inc"+i, inc[i], 365);
 		}
 		
 		bar[i] = document.getElementById("bar"+(i+1)); // Sets progress bar elements
@@ -164,10 +176,12 @@ function getCookie(cname) {
 	}
 }
 
-function checkCookie(name, val){
+function checkCookie(cname, cval){
 	var mcookie = getCookie(name);
-	if (mcookie != undefined && mcookie != NaN)
+	if (mcookie != undefined && mcookie != NaN){
 		money = parseInt(mcookie);
+		done = true;
+	}
 	else
-		setCookie(name, val, 365);
+		setCookie(cname, cval, 365);
 }
