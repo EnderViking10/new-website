@@ -7,6 +7,15 @@ inc = [0,0,0,0,0,0,0,0,0,0], // Incrament number array
 num = [0,0,0,0,0,0,0,0,0,0], // Upgrade level array
 bar = []; // Var for bar elements
 
+wantCookie = confirm("This website uses cookies to save game progress, press OK to enable cookies.");
+		if(wantCookie == true){
+			checkCookie("money", money, 365);
+			for(let i=0; i<10; i++){
+				checkCookie("inc"+i, num[i], 365);
+				checkCookie("num"+i, num[i], 365);
+			}
+		}
+
 function initialize() {
 	canvas = document.getElementById( "canvas" );
 	if ( canvas && canvas.getContext ) {
@@ -19,17 +28,6 @@ function initialize() {
 		cw = canvas.width;
 		ch = canvas.height;
 
-	  // Asks to use cookies
-		
-		wantCookie = confirm("This website uses cookies to save game progress, press OK to enable cookies.");
-		if(wantCookie == true){
-			checkCookie("money", money, 365);
-			for(let i=0; i<10; i++){
-				checkCookie("inc"+i, num[i], 365);
-				checkCookie("num"+i, num[i], 365);
-			}
-		}
-		
 	  // Calls drawScreen 30fps
 		
 		window.setInterval("drawScreen()",1000/30);  // call repeatedly
