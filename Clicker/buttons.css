@@ -16,6 +16,7 @@
 	border: none;
 	border-radius: 10px;
 	box-shadow: 0 9px #999;
+	onclick: button1();
 }
 
 .level1:hover {background-color: #cc0000}
@@ -214,9 +215,9 @@
 	box-shadow: 0 9px #999;
 }
 
-.level7:hover {background-color: #cc0000}
+#level7:hover {background-color: #cc0000}
 
-.level7:active {
+#level7:active {
 	background-color: #cc0000;
 	box-shadow: 0 5px #666;
 	transform: translateY(4px);

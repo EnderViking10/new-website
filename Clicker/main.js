@@ -1,51 +1,65 @@
-var canvas, c;
-var money = 100;
-checkCookie();
+var canvas, c, // Canvas vars
+cw, ch, midx, midy, // Width vars
+money = 100, // Money
+wantCookie; // Do they want cookies var
 
 function initialize() {
 	canvas = document.getElementById( "canvas" );
 	if ( canvas && canvas.getContext ) {
 	    c = canvas.getContext( "2d" );
 
-		var midx = canvas.width/2;
-		var midy = canvas.height/2;
-		var cw = canvas.width;
-		var ch = canvas.height;
+	  // Width vars
+		
+		midx = canvas.width/2;
+		midy = canvas.height/2;
+		cw = canvas.width;
+		ch = canvas.height;
 
-		//drawScreen();   // call the function to draw once
+	  // Asks to use cookies
+		
+		wantCookie = confirm("This website uses cookies to save game progress, press OK to enable cookies.");
+
+	  // Calls drawScreen 30fps
+		
 		window.setInterval("drawScreen()",1000/30);  // call repeatedly
 
 	} // end if
 } // initialize()
 
-
 function drawScreen() {
+
+	// Checks to see if user wants cookies / sets cookies
+	if(wantCookie == true)
+		checkCookie("money", money);
 	
   // Background
 
 	c.beginPath();
 	c.fillStyle = "black";
-	c.fillRect(0,0, canvas.width, canvas.height);
+	c.fillRect(0,0, cw, ch);
 	c.closePath();
 
-  // Makes and draws money
+  // Writes money in top left
 
 	c.beginPath();
 	c.textAlign = "left";
 	c.textBaseline = "top";
 	c.fillStyle = "red";
-	c.font = "40pt bold";
+	c.font = "40pt bold Arial";
 	c.fillText(money,40,40);
 	c.closePath();
 
+  // Writes upgrade number for each level
 	for(let i=0; i<10; i++){
 		c.beginPath();
 		c.textBaseline = "center";
 		c.fillStyle = "white";
+		// Draws left levels
 		if(i <= 4){
 			c.textAlign = "left";
 			c.fillText(num[i],340,140+(90*i));
 		}
+		// Draws right levels
 		else{
 			c.textAlign = "right";
 			c.fillText(num[i],460,140+(90*(i-5)));
@@ -53,29 +67,29 @@ function drawScreen() {
 		c.closePath();
 	}
 
-	run();
-	
-	setCookie("money", money, 365);
+	run(); // Calls run function
 
 } // end drawScreen
 
-var progress = [0,0,0,0,0,0,0,0,0,0],
-inc = [0,0,0,0,0,0,0,0,0,0],
-num = [0,0,0,0,0,0,0,0,0,0],
-bar = []
-
-checkCookiess();
+var progress = [0,0,0,0,0,0,0,0,0,0], // Progress bar array
+inc = [0,0,0,0,0,0,0,0,0,0], // Incrament number array
+num = [0,0,0,0,0,0,0,0,0,0], // Upgrade level array
+bar = []; // Var for bar elements
 
 function run(){
 	for(let i=0; i<10; i++){
-				
-		bar[i] = document.getElementById("bar" + (i+1));
-
-		setCookie("num" + i, num[i], 365);
-		setCookie("inc" + i, inc[i], 365);
 		
-		progress[i] += inc[i];
+		// Checks if user wants cookies/ sets cookies
+		if(wantCookie == true){	
+			checkCookie("num"+i, num[i]);
+			checkCookie("inc"+i, inc[i]);
+		}
+		
+		bar[i] = document.getElementById("bar"+(i+1)); // Sets progress bar elements
 
+		progress[i] += inc[i]; // Adds progress to the bars
+
+	  // Incraments money when progress bar reaches over 100
 		if(progress[i] > 100){
 			progress[i] = 0;
 			switch(i){
@@ -111,12 +125,23 @@ function run(){
 					break;
 			}
 		}
+	// Moves bars
 	if(inc[i] < 100)
 		bar[i].style.width = progress[i] + "%";
+	// Stops bar at 100%
 	else
 		bar[i].style.width = "100%";
 	}
 }
+
+/*
+Cookies funcs
+setCookie Sets the cookie
+getCookie attempts to find a cookie
+checkCookie uses the other 2 funcs to check if there is a cookie, 
+if there isn't it creates a cookie, 
+if there is is sets the cookie to a value
+*/
 
 function setCookie(cname, cvalue, exdays){
 	var d = new Date();
@@ -139,32 +164,10 @@ function getCookie(cname) {
 	}
 }
 
-function checkCookie(){
-  // Money cookies
-	var mcookie = getCookie("money");
+function checkCookie(name, val){
+	var mcookie = getCookie(name);
 	if (mcookie != undefined && mcookie != NaN)
 		money = parseInt(mcookie);
 	else
-		setCookie("money", money, 365);
-}
-
-function checkCookiess(){
-	for(let i=0; i<9; i++){
-	  // Num cookies
-		var ncookie = [],
-		icookie = [];
-		
-		ncookie[i] = getCookie("num" + i);
-		if(ncookie[i] != undefined && ncookie[i] != NaN)
-			num[i] = parseInt(ncookie[i]);
-		else
-			setCookie("num" + i, num[i], 365);
-		
-	  // Inc cookies
-		icookie[i] = getCookie("inc" + i);
-		if(icookie[i] != undefined && icookie[i] != NaN)
-			inc[i] = parseInt(icookie[i]);
-		else
-			setCookie("inc" + i, inc[i],365);
-	}	
+		setCookie(name, val, 365);
 }
