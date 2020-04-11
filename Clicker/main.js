@@ -3,7 +3,11 @@ cw, ch, midx, midy, // Width vars
 money = 100, // Money
 wantCookie, // Do they want cookies var
 dMoney = false,
-dOthers = false;
+dOthers = false,
+progress = [0,0,0,0,0,0,0,0,0,0], // Progress bar array
+inc = [0,0,0,0,0,0,0,0,0,0], // Incrament number array
+num = [0,0,0,0,0,0,0,0,0,0], // Upgrade level array
+bar = []; // Var for bar elements
 
 function initialize() {
 	canvas = document.getElementById( "canvas" );
@@ -20,7 +24,13 @@ function initialize() {
 	  // Asks to use cookies
 		
 		wantCookie = confirm("This website uses cookies to save game progress, press OK to enable cookies.");
-
+		if(wantCookie == true){
+			checkCookie("money", money, 365);
+			for(let i=0; i<10; i++){
+				checkCookie("inc"+i, num[i], 365);
+				checkCookie("num"+i, num[i], 365);
+			}
+		}
 	  // Calls drawScreen 30fps
 		
 		window.setInterval("drawScreen()",1000/30);  // call repeatedly
@@ -31,13 +41,8 @@ function initialize() {
 function drawScreen() {
 
 	// Checks to see if user wants cookies / sets cookies
-	if(wantCookie == true){
-		if(dMoney != true){
-			checkCookie("money", money)
-			dMoney = true;
-		}
+	if(wantCookie == true)
 		setCookie("money", money, 365);
-	}
 	
   // Background
 
@@ -78,21 +83,11 @@ function drawScreen() {
 
 } // end drawScreen
 
-var progress = [0,0,0,0,0,0,0,0,0,0], // Progress bar array
-inc = [0,0,0,0,0,0,0,0,0,0], // Incrament number array
-num = [0,0,0,0,0,0,0,0,0,0], // Upgrade level array
-bar = []; // Var for bar elements
-
 function run(){
 	for(let i=0; i<10; i++){
 		
 		// Checks if user wants cookies/ sets cookies
-		if(wantCookie == true){	
-			if(dOthers != true){
-				checkCookie("num"+i, num[i]);
-				checkCookie("inc"+i, inc[i]);
-				dOthers = true;
-			}
+		if(wantCookie == true){
 			setCookie("num"+i, num[i], 365);
 			setCookie("inc"+i, inc[i], 365);
 		}
