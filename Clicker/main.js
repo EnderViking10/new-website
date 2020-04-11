@@ -2,8 +2,6 @@ var canvas, c, // Canvas vars
 cw, ch, midx, midy, // Width vars
 money = 100, // Money
 wantCookie, // Do they want cookies var
-dMoney = false,
-dOthers = false,
 progress = [0,0,0,0,0,0,0,0,0,0], // Progress bar array
 inc = [0,0,0,0,0,0,0,0,0,0], // Incrament number array
 num = [0,0,0,0,0,0,0,0,0,0], // Upgrade level array
@@ -31,6 +29,7 @@ function initialize() {
 				checkCookie("num"+i, num[i], 365);
 			}
 		}
+		
 	  // Calls drawScreen 30fps
 		
 		window.setInterval("drawScreen()",1000/30);  // call repeatedly
@@ -172,11 +171,9 @@ function getCookie(cname) {
 }
 
 function checkCookie(cname, cval){
-	var mcookie = getCookie(name);
-	if (mcookie != undefined && mcookie != NaN){
-		money = parseInt(mcookie);
-		done = true;
-	}
+	var mcookie = getCookie(cname);
+	if (mcookie != undefined && mcookie != NaN)
+		cval = parseInt(mcookie);
 	else
 		setCookie(cname, cval, 365);
 }
